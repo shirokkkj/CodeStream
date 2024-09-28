@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.5s ease;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.register-box {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #f5f5f5;
+    position: relative;
+}
+
+h1 span {
+    color: #00d1b2;
+    position: relative;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #00d1b2, 0 0 20px #00d1b2, 0 0 30px #00d1b2, 0 0 40px #00d1b2;
+    }
+    to {
+        text-shadow: 0 0 5px #00d1b2, 0 0 10px #00d1b2, 0 0 15px #00d1b2, 0 0 20px #00d1b2;
+    }
+}
+
+p {
+    color: #bbbbbb;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #292929;
+    color: #ffffff;
+    border: 1px solid #444444;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.input-group input:focus, 
+.input-group select:focus, 
+.input-group textarea:focus {
+    background-color: #333333;
+    border-color: #00d1b2;
+}
+
+.input-group input:hover, 
+.input-group select:hover, 
+.input-group textarea:hover {
+    background-color: #383838;
+}
+
+.register-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #00d1b2;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.register-btn:hover {
+    background-color: #00bfa3;
+    transform: scale(1.05);
+}
+
+.register-btn:active {
+    background-color: #00a891;
+}
+
+.login-link {
+    margin-top: 15px;
+    color: #bbbbbb;
+    font-size: 0.9rem;
+}
+
+.login-link a {
+    color: #00d1b2;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+    color: #00bfa3;
+}
+
+.error-message {
+    position: fixed;
+    top: 20px; /* Distância do topo */
+    right: -300px; /* Começa fora da tela */
+    width: 250px; /* Largura do card */
+    padding: 15px;
+    background-color: #ff4d4d; /* Cor de fundo do erro */
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease; /* Transição suave */
+    z-index: 9999; /* Para ficar acima de outros elementos */
+}
+
+.show {
+    right: 20px; /* Posição final visível */
+}
+
+.hide {
+    right: -300px; /* Posição fora da tela */
+}

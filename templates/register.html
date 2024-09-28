@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CodeStream - Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="register-box">
+            <h1>Join <span>CodeStream</span></h1>
+            <p>Start your collaborative coding journey</p>
+            <form action="{{ url_for('register') }}" method="POST">
+                {{ form.hidden_tag() }}
+                                                                                                                                                                                                                                                      
+                
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    {{ form.username(class="form-control", placeholder="Enter your username") }}
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    {{ form.email(class="form-control", placeholder="Enter your email") }}
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    {{ form.password(class="form-control", placeholder="Enter a strong password") }}
+                </div>
+
+                <div class="input-group">
+                    <label for="repeat_password">Confirm Password</label>
+                    {{ form.repeat_password(class="form-control", placeholder="Re-enter your password") }}
+                </div>
+
+                <div class="input-group">
+                    <label for="country">Country</label>
+                    {{ form.country(class="form-control") }}
+                </div>
+
+                <div class="input-group">
+                    <label for="position">Role</label>
+                    {{ form.position(class="form-control") }}
+                </div>
+
+                <div class="input-group">
+                    <label for="short_biography">Short Bio</label>
+                    {{ form.short_biography(class="form-control", placeholder="Tell us a bit about yourself...") }}
+                </div>
+
+                <button type="submit" class="register-btn">Register</button>
+            </form>
+            <p class="login-link">Already have an account? <a href="/login">Log in</a></p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/register.js') }}"></script>
+</body>
+</html>
